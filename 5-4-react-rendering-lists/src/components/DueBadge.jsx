@@ -26,6 +26,7 @@ export default function DueBadge({ dueDate }) {
      ========================================================= */
 
   // TODO (TASK 3): implement DueBadge label logic
-
-  return <span className="badge">Label here</span>;
+  const d = daysUntil(dueDate)
+     
+  return <span className="badge">{d < 0 && "Overdue"} {d === 0 && "Due today"} {d > 1 && `Due in ${d} day${d===1 ? "" : "s"}`} </span>;
 }
